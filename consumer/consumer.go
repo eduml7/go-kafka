@@ -6,8 +6,8 @@ import (
 	"gopkg.in/confluentinc/confluent-kafka-go.v1/kafka"
 )
 
-//ConsumerConfig Configuration to connect to kafka for reading messages
-func ConsumerConfig() kafka.ConfigMap {
+//Config Configuration to connect to kafka for reading messages
+func Config() kafka.ConfigMap {
 	return kafka.ConfigMap{
 		"bootstrap.servers": "localhost",
 		"group.id":          "myGroup",
@@ -17,7 +17,7 @@ func ConsumerConfig() kafka.ConfigMap {
 //Consume Consumes all messages
 func Consume() {
 	fmt.Println("Start consuming ...")
-	kafkaConsumerConfig := ConsumerConfig()
+	kafkaConsumerConfig := Config()
 	c, err := kafka.NewConsumer(&kafkaConsumerConfig)
 
 	if err != nil {

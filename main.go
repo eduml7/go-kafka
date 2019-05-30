@@ -1,8 +1,8 @@
 package main
 
 import (
-	consumer "go_kafka/consumer"
-	producer "go_kafka/producer"
+	consumer "go-kafka/consumer"
+	producer "go-kafka/producer"
 )
 
 /*

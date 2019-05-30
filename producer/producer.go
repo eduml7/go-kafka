@@ -1,4 +1,4 @@
-package consumer
+package producer
 
 import (
 	"fmt"
@@ -6,8 +6,8 @@ import (
 	"gopkg.in/confluentinc/confluent-kafka-go.v1/kafka"
 )
 
-//ProducerConfig Configuration to connect to kafka for producing messages
-func ProducerConfig() kafka.ConfigMap {
+//Config Configuration to connect to kafka for producing messages
+func Config() kafka.ConfigMap {
 	return kafka.ConfigMap{
 		"bootstrap.servers": "localhost",
 	}
@@ -17,7 +17,7 @@ func ProducerConfig() kafka.ConfigMap {
 func Produce() {
 
 	fmt.Println("Start producing ...")
-	kafkaConfig := ProducerConfig()
+	kafkaConfig := Config()
 	kafkaProducer, err := kafka.NewProducer(&kafkaConfig)
 	if err != nil {
 		panic(err)
